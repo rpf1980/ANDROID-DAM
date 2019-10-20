@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">AppPizeria_v02</string>
+    <!--Strings LOGIN-->
+    <string name="hintNameLogin">Email</string>
+    <string name="hintPasswordLogin">Password</string>
+    <string name="btnLogin">next</string>
+    <!--Strings OPCIONES PIZZERÍA-->
+    <string name="strTvOpcionesPizzeria">MENÚ OPCIONES PIZZERÍA</string>
+    <string name="strBtnOpcionWeb">web</string>
+    <string name="strBtnOpcionPedido">pedido</string>
+    <string name="strBtnOpcionConfiguracion">configuración</string>
 </resources>
