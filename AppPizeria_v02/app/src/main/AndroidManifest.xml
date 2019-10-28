@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity_personalizada"></activity>
+        <activity android:name=".ActivityOpcionesPedido"></activity>
         <activity android:name=".ActivityFavorita" />
+        <!--
+        Del activity donde queremos pulsar y volver atrás,
+            hay que indicarle cual será su padre. Es decir, hacia donde queremos que nos lleve.
+            No olvidemos añadir también el metadata
+        -->
+        <!--0000000000000000000000000000000000000-->
         <activity
             android:name=".ActivityPedido"
             android:parentActivityName=".ActivityOpcionesPizzeria">
@@ -18,18 +24,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityOpcionesPizzeria" />
         </activity>
-        <!--
-        Del activity donde queremos pulsar y volver atrás,
-            hay que indicarle cual será su padre. Es decir, hacia donde queremos que nos lleve.
-            No olvidemos añadir también el metadata
-        -->
+        <!--0000000000000000000000000000000000000-->
         <activity
-            android:name=".ActivityOpcionesPizzeria"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
+        android:name=".ActivityOpcionesPizzeria"
+        android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+    </activity>
+        <!--0000000000000000000000000000000000000-->
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

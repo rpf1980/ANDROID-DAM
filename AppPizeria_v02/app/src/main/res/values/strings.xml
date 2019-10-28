@@ -4,6 +4,7 @@
     <string name="hintNameLogin">Email</string>
     <string name="hintPasswordLogin">Password</string>
     <string name="btnLogin">next</string>
+    <string name="strCheckBoxLogin">Guardar usuario y contraseña</string>
     <!--Strings OPCIONES PIZZERÍA-->
     <string name="strTvOpcionesPizzeria">MENÚ OPCIONES PIZZERÍA</string>
     <string name="strBtnOpcionWeb">web</string>
@@ -13,4 +14,5 @@
     <string name="strBtnFavorita">FAVORITA</string>
     <string name="strBtnPersonalizada">PERSONALIZADA</string>
     <string name="strBtnPredeterminada">PREDETERMINADA</string>
+    <string name="strTvOpcionesPersonalizada">Especialidades de la casa ....O bien personaliza tu pizza</string>
 </resources>

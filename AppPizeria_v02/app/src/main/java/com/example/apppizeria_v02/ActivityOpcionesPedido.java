@@ -2,6 +2,7 @@ package com.example.apppizeria_v02;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class ActivityOpcionesPedido extends AppCompatActivity
@@ -12,5 +13,8 @@ public class ActivityOpcionesPedido extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opciones_pedido);
+
+        //Recibimos el intent
+        Intent intent = getIntent();
     }
 }
