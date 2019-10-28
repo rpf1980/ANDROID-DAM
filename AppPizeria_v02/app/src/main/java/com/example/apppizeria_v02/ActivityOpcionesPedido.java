@@ -4,13 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Activity_personalizada extends AppCompatActivity
+public class ActivityOpcionesPedido extends AppCompatActivity
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personalizada);
+        setContentView(R.layout.activity_opciones_pedido);
     }
 }
