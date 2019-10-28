@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
         if(edtNameLogin.getText().toString().equalsIgnoreCase("usuario") &&
            edtNamePass.getText().toString().equalsIgnoreCase("usuario"))
         {
-            Intent intent = new Intent(this, ActivityOpcionesPizzeria.class);
+            Intent intent = new Intent(getApplicationContext(), ActivityOpcionesPizzeria.class);
             startActivity(intent);
         }
     }

@@ -9,4 +9,8 @@
     <string name="strBtnOpcionWeb">web</string>
     <string name="strBtnOpcionPedido">pedido</string>
     <string name="strBtnOpcionConfiguracion">configuración</string>
+    <string name="strTvPedido">Elección del pedido...</string>
+    <string name="strBtnFavorita">FAVORITA</string>
+    <string name="strBtnPersonalizada">PERSONALIZADA</string>
+    <string name="strBtnPredeterminada">PREDETERMINADA</string>
 </resources>
