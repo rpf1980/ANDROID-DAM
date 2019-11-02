@@ -9,29 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityOpcionesPedido"></activity>
+
         <!-- INICIO -->
-        <activity android:name=".ActivityInicioKotlin">
+
+        <!-- REGISTRO -->
+        <activity
+            android:name=".ActivityRegistro">
+
+        </activity>
+        <!-- LOGIN -->
+        <activity
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- REGISTRO -->
-        <activity
-            android:name=".ActivityRegistro"
-            android:parentActivityName=".ActivityInicioKotlin">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ActivityInicioKotlin"></meta-data>
-        </activity> <!-- LOGIN -->
-        <activity
-            android:name=".MainActivity"
-            android:parentActivityName=".ActivityInicioKotlin">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ActivityInicioKotlin"></meta-data>
-        </activity> <!-- OPCIONES PIZZERIA -->
+        </activity>
+        <!-- OPCIONES PIZZERIA -->
         <activity
             android:name=".ActivityOpcionesPizzeria"
             android:parentActivityName=".MainActivity">
@@ -39,14 +34,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".ActivityFavorita" />
+        <!--OPCIONES PEDIDO-->
         <activity
-            android:name=".ActivityPedido"
+            android:name=".ActivityOpcionesPedidoKotlin"
             android:parentActivityName=".ActivityOpcionesPizzeria">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ActivityOpcionesPizzeria" />
+                android:value=".ActivityOpcionesPizzeria"/>
         </activity>
-        <activity android:name=".ActivityFavorita" />
     </application>
 
 </manifest>

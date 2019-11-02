@@ -3,6 +3,7 @@ package com.example.apppizeria_v02;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity
         edtNamePass = findViewById(R.id.idEdtPassLogin);
         btnLogin = findViewById(R.id.idBtnLogin);
         checkBox = findViewById(R.id.idCheckBox);
+
     }
 
     // LOGIN
@@ -39,9 +41,9 @@ public class MainActivity extends AppCompatActivity
         //Contraseña----------------------------------------> usuario
         String usuario = edtNameLogin.getText().toString();
         String pass = edtNamePass.getText().toString();
+        String dataPreferencesLogin = ""; // Nombre del fichero para almacenar datos SharedPreferences
 
-        // Recibimos el Intent de Inicio (Kotlin)
-        Intent initIntent = getIntent();
+
 
         if(usuario.equalsIgnoreCase("1") &&
                 pass.equalsIgnoreCase("1"))
@@ -54,10 +56,21 @@ public class MainActivity extends AppCompatActivity
         if(checkBox.isChecked())
         {
             // SharePreferences
-            SharedPreferences sp = getSharedPreferences( usuario + pass, MODE_PRIVATE);
+            SharedPreferences sp = getSharedPreferences( dataPreferencesLogin, Context.MODE_PRIVATE);
 
+            // Declaramos un editor ( Objeto Editor )
             SharedPreferences.Editor editor = sp.edit();
-            //editor.putString( usuario + pass, e)
+
+            // ***Validamos los campos ( no pueden estar vacíos )***
+
+            // Guardamos los datos
+            editor.putString("Usuario: ", usuario);
+            editor.putString("Contraseña: ", pass);
+
+            // Debemos hacer un commit y listo
+            editor.commit();
+
+            // ***Mostrar con Toast la inserción correcta de los datos***
         }
     }
 }

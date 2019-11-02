@@ -45,6 +45,13 @@ public class ActivityOpcionesPizzeria extends AppCompatActivity
     //Evento btn PEDIDO
     public void onClickPedido(View v)
     {
+        Intent intent = new Intent(getApplicationContext(), ActivityOpcionesPedidoKotlin.class);
+        startActivity(intent);
+    }
+
+    //Evento btn CONFIGURACION
+    public void onClickConfiguracion(View v)
+    {
 
     }
 }

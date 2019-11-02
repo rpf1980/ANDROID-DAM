@@ -49,4 +49,15 @@
         android:text="@string/strCheckBoxLogin"
         app:layout_constraintStart_toStartOf="@+id/idEdtPassLogin"
         app:layout_constraintTop_toBottomOf="@+id/idBtnLogin" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:text="@string/strTvLogin"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/idCheckBox"
+        app:layout_constraintStart_toStartOf="@+id/idCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/idCheckBox" />
 </androidx.constraintlayout.widget.ConstraintLayout>
