@@ -10,13 +10,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ActivityOpcionesPedido"></activity>
-        <activity android:name=".ActivityFavorita" />
-        <!--
-        Del activity donde queremos pulsar y volver atrás,
-            hay que indicarle cual será su padre. Es decir, hacia donde queremos que nos lleve.
-            No olvidemos añadir también el metadata
-        -->
-        <!--0000000000000000000000000000000000000-->
+        <!-- INICIO -->
+        <activity android:name=".ActivityInicioKotlin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- REGISTRO -->
+        <activity
+            android:name=".ActivityRegistro"
+            android:parentActivityName=".ActivityInicioKotlin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityInicioKotlin"></meta-data>
+        </activity> <!-- LOGIN -->
+        <activity
+            android:name=".MainActivity"
+            android:parentActivityName=".ActivityInicioKotlin">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityInicioKotlin"></meta-data>
+        </activity> <!-- OPCIONES PIZZERIA -->
+        <activity
+            android:name=".ActivityOpcionesPizzeria"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".ActivityPedido"
             android:parentActivityName=".ActivityOpcionesPizzeria">
@@ -24,23 +46,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ActivityOpcionesPizzeria" />
         </activity>
-        <!--0000000000000000000000000000000000000-->
-        <activity
-        android:name=".ActivityOpcionesPizzeria"
-        android:parentActivityName=".MainActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity" />
-    </activity>
-        <!--0000000000000000000000000000000000000-->
-
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ActivityFavorita" />
     </application>
 
 </manifest>

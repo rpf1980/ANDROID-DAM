@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity
         String usuario = edtNameLogin.getText().toString();
         String pass = edtNamePass.getText().toString();
 
+        // Recibimos el Intent de Inicio (Kotlin)
+        Intent initIntent = getIntent();
+
         if(usuario.equalsIgnoreCase("1") &&
                 pass.equalsIgnoreCase("1"))
         {

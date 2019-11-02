@@ -5,16 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class ActivityOpcionesPedido extends AppCompatActivity
+public class ActivityRegistro extends AppCompatActivity
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_opciones_pedido);
+        setContentView(R.layout.activity_registro);
 
-        //Recibimos el intent
+        //Recibe Intent de Btn REGISTRARSE en ActivityInicioKotlin
         Intent intent = getIntent();
     }
 }

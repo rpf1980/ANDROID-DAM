@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityRegistro">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:text="@string/strTvRegistro"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/idEdtNameRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:ems="10"
+        android:hint="@string/hintUsuarioRegistro"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/idEdtEmailRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="@string/hintEmailRegistro"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/idEdtNameRegister"
+        app:layout_constraintStart_toStartOf="@+id/idEdtNameRegister"
+        app:layout_constraintTop_toBottomOf="@+id/idEdtNameRegister" />
+
+    <EditText
+        android:id="@+id/idEdtPassRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="@string/hintPassRegistro"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/idEdtEmailRegister"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/idEdtEmailRegister"
+        app:layout_constraintTop_toBottomOf="@+id/idEdtEmailRegister" />
+
+    <Button
+        android:id="@+id/idBtnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/strBtnRegistro"
+        app:layout_constraintEnd_toEndOf="@+id/idEdtPassRegister"
+        app:layout_constraintStart_toStartOf="@+id/idEdtPassRegister"
+        app:layout_constraintTop_toBottomOf="@+id/idEdtPassRegister" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

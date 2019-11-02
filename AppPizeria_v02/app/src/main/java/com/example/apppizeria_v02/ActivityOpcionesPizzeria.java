@@ -45,7 +45,6 @@ public class ActivityOpcionesPizzeria extends AppCompatActivity
     //Evento btn PEDIDO
     public void onClickPedido(View v)
     {
-        Intent intent = new Intent(getApplicationContext(), ActivityOpcionesPedido.class);
-        startActivity(intent);
+
     }
 }
