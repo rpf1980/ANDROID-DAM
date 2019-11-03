@@ -34,7 +34,7 @@ public class ActivityRegistro extends AppCompatActivity
         asociaIDs();
 
         // Recibe Intent de Btn REGISTRARSE en ActivityInicioKotlin
-        //Intent intent = getIntent();
+        Intent intent = getIntent();
     }
 
     String strNombre = edtNombreRegistro.getText().toString();
