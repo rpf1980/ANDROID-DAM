@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_inicio_kotlin.*
+import java.lang.Exception
 
 class ActivityInicioKotlin : AppCompatActivity() {
 
@@ -14,7 +15,19 @@ class ActivityInicioKotlin : AppCompatActivity() {
         setContentView(R.layout.activity_inicio_kotlin)
 
         idBtnRegistroEnInicio.setOnClickListener {
-            startActivity(Intent(this@ActivityInicioKotlin, ActivityRegistro::class.java))
+
+            try
+            {
+                startActivity(Intent(this@ActivityInicioKotlin, ActivityRegistro::class.java))
+            }
+            catch (e: Exception)
+            {
+                Log.e("ERROR: ", e.toString())
+            }
+        }
+
+        idBtnInicioSesion.setOnClickListener {
+            startActivity(Intent(this@ActivityInicioKotlin, MainActivity::class.java))
         }
 
     }
