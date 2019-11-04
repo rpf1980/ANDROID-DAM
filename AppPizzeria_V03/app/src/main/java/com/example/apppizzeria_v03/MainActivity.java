@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity
     // Evento INICIAR SESIÓN
     public void clickIniciarSesionGuiInicio(View v)
     {
-
+        Intent intent = new Intent(getApplicationContext(), GUI_Login.class);
+        startActivity(intent);
     }
 
     // Evento REGISTRARSE
