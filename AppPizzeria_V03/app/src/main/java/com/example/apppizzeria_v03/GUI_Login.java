@@ -18,6 +18,8 @@ public class GUI_Login extends AppCompatActivity
     Button btnLogin;
     CheckBox checkLogin;
 
+    String dataPrueba = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -30,20 +32,25 @@ public class GUI_Login extends AppCompatActivity
         checkLogin = findViewById(R.id.idCheckBoxLogin);
 
 
+
     }
 
     public void onClicBtnLogin(View v)
     {
         String usuario = edtUsuarioLogin.getText().toString();
         String pass = edtPassLogin.getText().toString();
+        String usuData = "";
+        String passData = "";
 
+        SharedPreferences sp = getSharedPreferences("JUANRegisterData", MODE_PRIVATE);
+        dataPrueba = sp.getString("Usuario", "El dato está vacío");
         // **AQUÍ**... estoy probando si accedo a los datos registrados en SharedPrefernces
-        SharedPreferences sp = getSharedPreferences("Rodrigo.RegisterData", Context.MODE_PRIVATE);
-        getToast(sp.getString("Usuario:", "El dato está vacío"));
+        getToast(dataPrueba);
 
         //Comprobamos que el usuario y contraseña estén registrados
         //en File Explorer Device ( data/ data/ .... LOS REGISTROS DE
         //SharedPreferences
+
 
 
     }

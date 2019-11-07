@@ -37,27 +37,43 @@ public class GUI_Registro extends AppCompatActivity
     // Btn GUARDAR
     public void onClickGuardaRegistro(View v)
     {
-        //getToast("Entramos !!!");
-
+        // Guardamos los datos en ámbito Global de Clase
         String usuario = edtUsuarioGuiRegistro.getText().toString();
         String email = edtEmailGuiRegistro.getText().toString();
         String pass = edtPassGuiRegistro.getText().toString();
 
-        if(camposIsEmpty(usuario, email, pass) &&
-                validarEmail(email) && validarPwd(pass))
+        if(camposIsEmpty(usuario, email, pass))
         {
-            // Guardamos los datos en xml SharedPreferences
-            SharedPreferences sp = getSharedPreferences(usuario+".RegisterDATA", Context.MODE_PRIVATE);
+            getToast("ENTRAMOS");
+            // Preparamos el registro SharedPreferences
+            SharedPreferences sp = getSharedPreferences(usuario+"RegisterDATA", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sp.edit();
-            editor.putString("Usuario:", usuario);
-            editor.putString("Email:", email);
-            editor.putString("Pass:", pass);
+
+            editor.putString("Usuario", usuario);
+
+            if(validarEmail(email))
+            {
+                editor.putString("Email", email);
+            }
+            else
+            {
+                getToast("Email no válido !!!");
+            }
+
+            if(validarPassWord(pass))
+            {
+                editor.putString("Pass", pass);
+            }
+            else
+            {
+                getToast("Introduce una contraseña de 8 a 16 caracteres");
+            }
+
             editor.commit();
         }
         else
         {
-            getToast("Por favor, compruebe que los campos no estén vacíos.\n" +
-                    "Compruebe que su emali y contraseña sean válidos");
+            getToast("Error, hay campos vacíos");
         }
     }
 
@@ -74,46 +90,21 @@ public class GUI_Registro extends AppCompatActivity
         return isEmptyOk;
     }
 
-    // Método valid EMAIL
+    // Método validar EMAIL
     public boolean validarEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
         return pattern.matcher(email).matches();
     }
 
-    // Método para validar CONTRASEÑA
-    public boolean validarPwd(String pwd){
-        boolean rtn = true;
-        int seguidos = 0;
-        char ultimo = 0xFF;
-
-        int minuscula = 0;
-        int mayuscula = 0;
-        int numero = 0;
-        int especial = 0;
-        boolean espacio = false;
-        if(pwd.length() < 8 || pwd.length() > 16) return false; // tamaño
-        for(int i=0;i<pwd.length(); i++){
-            char c = pwd.charAt(i);
-            if(c <= ' ' || c > '~' ){
-                rtn = false; //Espacio o fuera de rango
-                break;
-            }
-            if( (c > ' ' && c < '0') || (c >= ':' && c < 'A') || (c >= '[' && c < 'a') || (c >= '{' && c < 127) ){
-                especial++;
-            }
-            if(c >= '0' && c < ':') numero++;
-            if(c >= 'A' && c < '[') mayuscula++;
-            if(c >= 'a' && c < '{') minuscula++;
-
-            seguidos = (c==ultimo) ? seguidos + 1 : 0;
-            if(seguidos >= 2){
-                rtn = false; // 3 seguidos
-                break;
-            }
-            ultimo = c;
+    // Método validar PASSWORD
+    public boolean validarPassWord(String pass)
+    {
+        boolean passOk = false;
+        if(pass.length() > 8 && pass.length() < 16)
+        {
+            passOk = true;
         }
-        rtn = rtn && especial > 0 && numero > 0 && minuscula > 0 && mayuscula > 0;
-        return rtn;
+        return passOk;
     }
 
     // Método TOAST
